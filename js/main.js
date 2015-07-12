@@ -1,4 +1,4 @@
-	   getWeather("./weather.php");
+	   getWeather("http://api.openweathermap.org/data/2.5/weather?q=Chicago");
 
 	   function getWeather(link) {
 	   		$.getJSON(link, function(data){
@@ -42,33 +42,3 @@
 			$($.doge);
 		});
 	   }
-
-	   	$("#browser_geo" ).one('click', function(){
-	   		getLocation();
-
-  			 function getLocation()
-			  {
-			  if (navigator.geolocation)
-			    {
-			    navigator.geolocation.getCurrentPosition(showPosition);
-			    }
-			  else
-			  	$("#browser_geo").text("Geolocation is not supported by this browser.");
-			  }
-			function showPosition(position)
-			  {
-			  //$("#browser_geo").text("Latitude: " + position.coords.latitude + 
-			  //"Longitude: " + position.coords.longitude);
-
-			  	var url = 'http://api.openweathermap.org/data/2.5/weather';
-                url += '?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&callback=?';
-
-                getWeather(url);
-                $("#browser_geo").text("wow, located!").css("cursor", "auto").css("color", "#FF5CFF");
-			  }
-			});
-
-
-
-
-

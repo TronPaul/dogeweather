@@ -203,7 +203,7 @@
         interval = setInterval(function() {
             
             $('.such.overlay').append(
-                '<span style="position: absolute; left: ' + Math.random()  *100 + '%;top: ' + Math.random()  *100 + '%;font-size: ' + Math.max(20, (Math.random() * 50 + 24)) + 'px; color:' + randomFrom(suchcolors) + ';">'
+                '<span style="position: absolute; left: ' + Math.random()  *100 + '%;top: ' + Math.random()  *100 + '%;font-size: ' + Math.max(10, (Math.random() * 25 + 12)) + 'px; color:' + randomFrom(suchcolors) + ';">'
                     + r(dogefix) +
                 '</span>');
                 var suchnumber = $("span").length;
@@ -212,10 +212,5 @@
                     $('.such span:nth-child(1)').remove();
                 }
         }, 2300);
-
-        $("#browser_geo" ).one('click', function(){
-            console.log('clear');
-            clearInterval(interval);
-        });
     };
 })(jQuery);
